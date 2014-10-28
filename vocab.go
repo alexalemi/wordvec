@@ -50,6 +50,7 @@ func mapToList(m map[string]uint64) WordList {
 	return p
 }
 
+// Len returns the number of words in the vocab
 func (v Vocab) Len() int {
 	return len(v.Words)
 }
@@ -119,6 +120,7 @@ func NewVocab(corpus string, minCount uint64) *Vocab {
 	return &v
 }
 
+// LoadVocab loads a vocabulary from a file, assuming its in tab separated form
 func LoadVocab(flname string) *Vocab {
 	log.Println("Loading vocab from", flname)
 	file, err := os.Open(flname)
@@ -157,6 +159,7 @@ func LoadVocab(flname string) *Vocab {
 	return &v
 }
 
+// Save saves a vocab to a file in tab separated form
 func (v Vocab) Save(flname string) {
 	log.Println("Saving vocab to", flname)
 	file, err := os.Create(flname)

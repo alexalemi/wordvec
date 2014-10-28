@@ -4,7 +4,7 @@ import (
 	"flag"
 	"os"
 
-	"github.com/alexalemi/goword2vec"
+	"github.com/alexalemi/wordvec"
 )
 
 var (
